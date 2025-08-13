@@ -1,5 +1,3 @@
-// --- START OF FILE src/App.tsx ---
-
 import React, { useEffect } from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -59,7 +57,8 @@ const App = () => {
             <Route path="/:lang/productos/bulk-horeca" element={<LanguageManager><Bulk /></LanguageManager>} />
             <Route path="/:lang/aviso-legal" element={<LanguageManager><AvisoLegal /></LanguageManager>} />
             <Route path="/:lang/politica-de-privacidad" element={<LanguageManager><PoliticaPrivacidad /></LanguageManager>} />
-            <Route path="/:lang/receipt" element={<LanguageManager><ReceiptPage /></LanguageManager>} /> {/* New Receipt Page Route */}
+            <Route path="/:lang/receipt" element={<LanguageManager><ReceiptPage /></LanguageManager>} /> {/* Existing static Receipt Page Route */}
+            <Route path="/:lang/receipts/:slug" element={<LanguageManager><ReceiptPage /></LanguageManager>} /> {/* New Dynamic Receipt Page Route */}
             
             {/* Unsubscribe page can be language-agnostic or also have a lang param */}
             <Route path="/unsubscribe" element={<UnsubscribePage />} /> 
@@ -74,4 +73,3 @@ const App = () => {
 };
 
 export default App;
-// --- END OF FILE src/App.tsx ---
